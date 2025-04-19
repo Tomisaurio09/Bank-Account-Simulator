@@ -1,0 +1,1 @@
+#Esta es una lista de metodos/acciones que puede tomar el usuario solo cuando ya se registro

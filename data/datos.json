@@ -1,1 +1,13 @@
-{}
+{
+    "47182696": {
+        "name": "Thomas",
+        "id": "47182696",
+        "email": "tomisaurio@gmail.com",
+        "bank_account": {
+            "bank_account_id": 1024,
+            "account_balance": 1050.0,
+            "currency": "ARS",
+            "history_of_transactions": []
+        }
+    }
+}
