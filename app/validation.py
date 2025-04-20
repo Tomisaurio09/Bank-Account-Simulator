@@ -4,7 +4,7 @@ def validate_input(message, options):
     while validated_input not in options:
         validated_input = input(message).upper()
         if validated_input not in options:
-            print("Invalid input. Please, enter one of the available options.")
+            print(f"'{validated_input}' is not a valid option. Please choose from: {', '.join(options)}")
     return validated_input
 
 
@@ -24,7 +24,7 @@ def validate_id(message):
             if user_input.isdigit():  
                 return user_input
             else:
-                print("Invalid input. Please, use numbers only.")
+                print(f"'{user_input}' is not a valid number. Please, use numbers only.")
         except ValueError:
             print("An unexpected error occurred.")
 
@@ -36,7 +36,7 @@ def validate_email(message):
             if re.match(pattern, user_input):  
                 return user_input
             else:
-                print("Invalid input. Please, use a valid email format.")
+                print(f"'{user_input}' is not a valid email. Please, use a valid email format.")
         except Exception:
             print("An unexpected error occurred.")
 

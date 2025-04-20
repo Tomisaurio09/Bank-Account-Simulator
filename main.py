@@ -1,9 +1,4 @@
-"""
-Paso 1: Construir la logica del Log In.
-Crear un archivo JSON donde guardemos los datos de los clientes (nombre,dni,email,cuenta bancaria) y que cuenta bancaria sea un diccionario
 
-Primer paso: Agregar esta info al JSON.
-"""
 import json
 from app.validation import validate_input
 from app.register_log import *

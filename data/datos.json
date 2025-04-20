@@ -6,7 +6,7 @@
         "bank_account": {
             "account_id": 546,
             "account_balance": 1700.0,
-            "currency": "ARG",
+            "currency": "ARS",
             "transactions_history": []
         }
     },

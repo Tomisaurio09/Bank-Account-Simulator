@@ -24,4 +24,3 @@ cd BankAccountSimulator
   
 2. Run:
     python main.py
----

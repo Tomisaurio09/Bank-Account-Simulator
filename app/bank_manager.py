@@ -1,4 +1,3 @@
-#Esta es una lista de metodos/acciones que puede tomar el usuario solo cuando ya se registro
 import datetime
 
 class BankAccount:
@@ -55,7 +54,7 @@ class BankAccount:
             "id": self.user_id,
             "email": self.email,
             "bank_account": {
-                "bank_account_id": self.bank_account_id,
+                "account_id": self.bank_account_id,
                 "account_balance": self.balance,
                 "currency": self.currency,
                 "transactions_history": self.history

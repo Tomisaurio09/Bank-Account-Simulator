@@ -1,8 +1,6 @@
-#Esto registra un nuevo usuario en el JSON (register) y verifica si este ya existia antes (Log In)
 from app.validation import *
 
 def user_register(customer_data):
-    #user_id = validate_numbers("What's your id? (Numbers Only): ","Invalid user id, please enter numbers only.")
     user_id = validate_id("What's your id? (Numbers Only): ")
     if user_id in customer_data:
         print(f"The ID {user_id} is already registered.")
