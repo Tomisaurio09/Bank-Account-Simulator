@@ -7,6 +7,7 @@ Primer paso: Agregar esta info al JSON.
 import json
 from app.validation import validate_input
 from app.register_log import *
+from app.bank_manager import *
 
 customer_data_file = "data/datos.json"
 
@@ -29,8 +30,8 @@ def save_customers(customers, customer_data_file):
         json.dump(customers, f, indent=4)
 
 def introduction():
-    print("Hello user, this is a bank account simulator")
-    print("Please choose an option of the following: ")
+    print("\nHello user, this is a bank account simulator")
+    print("\nPlease choose an option of the following: ")
 
 def bank_account_introduction():
     print("Your options are the following: ")
@@ -41,6 +42,32 @@ def bank_account_introduction():
         4. View history
         5. Log out
             """)
+    
+def bank_account_functions(user_id, customer_data):
+    user_data = customer_data[user_id]
+    account = BankAccount(user_id, user_data)
+
+    while True:
+        bank_account_introduction()
+        option = validate_input("Choose one: ", ["1", "2", "3", "4", "5"])
+
+        if option == "1":
+            account.check_balance()
+        elif option == "2":
+            amount = float(validate_numbers("Enter deposit amount: ", "Invalid amount."))
+            account.deposit(amount)
+            print("Deposit successful.")
+        elif option == "3":
+            amount = float(validate_numbers("Enter withdrawal amount: ", "Invalid amount."))
+            account.withdraw(amount)
+        elif option == "4":
+            account.view_history()
+        elif option == "5":
+            customer_data[user_id] = account.export_data()
+            save_customers(customer_data, customer_data_file)
+            print("Logging out...")
+            break
+
 
 def main():
     while True:
@@ -67,7 +94,7 @@ def main():
                 continue
 
             print("\nThank you! Your account has been successfully registered.\n")
-            # Acá podés llamar a un menú de opciones bancarias si querés
+            print("\nTo access the bank functions please log in")
 
         elif user_choice == "2":
             logged_in = user_log_in(customer_data)
@@ -76,7 +103,7 @@ def main():
                 continue
 
             print("You logged in successfully!")
-            # Acá también podrías llamar a un menú bancario si el login fue exitoso
+            bank_account_functions(logged_in, customer_data)
 
         elif user_choice == "3":
             print("Thank you for using the Bank Account Simulator. Goodbye!")

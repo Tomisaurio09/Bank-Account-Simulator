@@ -14,10 +14,5 @@ def validate_numbers(message,error_message):
         except ValueError:
             print(error_message)
 
-def validate_balance(message,error_message):
-    while True:
-        try:
-            return float(input(message))
-        except ValueError:
-            print(error_message)
+
 

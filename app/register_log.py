@@ -13,7 +13,7 @@ def user_register(customer_data):
     print("Now, I need you to give your bank account data.")
 
     bank_account_id = validate_numbers("What's your bank account id? (Numbers Only): ","Invalid bank account id, please enter numbers only.")
-    account_balance = validate_balance("What's your bank account balance? (Numbers Only): ","Invalid bank account balance, please enter numbers only.")
+    account_balance = float(validate_numbers("What's your bank account balance? (Numbers Only): ","Invalid bank account balance, please enter numbers only."))
     currency = input("What's the currency of the account?: ").upper()
 
     customer_data[user_id] = {
@@ -21,10 +21,10 @@ def user_register(customer_data):
         "id": user_id,
         "email": user_email,
         "bank_account": {
-            "bank_account_id": bank_account_id,
+            "account_id": bank_account_id,
             "account_balance": account_balance,
             "currency": currency,
-            "history_of_transactions": []
+            "transactions_history": []
         }
     }
     return customer_data
@@ -32,7 +32,7 @@ def user_register(customer_data):
 def user_log_in(customer_data):
     user_id = input("What's your id? (Numbers Only): ")
     if user_id in customer_data:
-        return f"The ID {user_id} is already registered."
+        return user_id
     else:
         print(f"The ID {user_id} is not in the database")
         return None
