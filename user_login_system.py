@@ -95,6 +95,8 @@ def main():
 
             print("\nThank you! Your account has been successfully registered.\n")
             print("\nTo access the bank functions please log in")
+            print("\n")
+            print("\n")
 
         elif user_choice == "2":
             logged_in = user_log_in(customer_data)

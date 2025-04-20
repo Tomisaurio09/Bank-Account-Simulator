@@ -9,5 +9,27 @@
             "currency": "ARG",
             "transactions_history": []
         }
+    },
+    "5646": {
+        "name": "Thomas",
+        "id": "5646",
+        "email": "tomisaurio@email.com",
+        "bank_account": {
+            "account_id": 656,
+            "account_balance": 1988.0,
+            "currency": "USD",
+            "transactions_history": []
+        }
+    },
+    "5345435345435": {
+        "name": "Thomas",
+        "id": "5345435345435",
+        "email": "a@gmail.com",
+        "bank_account": {
+            "account_id": 5435,
+            "account_balance": 53543.0,
+            "currency": "USD",
+            "transactions_history": []
+        }
     }
 }
